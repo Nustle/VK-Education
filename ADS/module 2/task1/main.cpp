@@ -73,7 +73,7 @@ void Set<T, Hasher>::Grow() {
             continue;
         }
         int rehashed_prob = hasher(node.key) % rehashed_set.size();
-        for (int j = 0; i < rehashed_set.size(); j++) {
+        for (int j = 0; j < rehashed_set.size(); j++) {
             rehashed_prob = (rehashed_prob + j) % rehashed_set.size();
             if (rehashed_set[rehashed_prob].status == Node<T>::Status::NIL) {
                 rehashed_set[rehashed_prob] = node;
